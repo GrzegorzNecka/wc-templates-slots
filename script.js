@@ -11,11 +11,10 @@ class Greeting extends HTMLElement {
 
   connectedCallback() {
     const tpl = document.querySelector(".tpl-greeting");
-    console.log(tpl);
     this.text.innerHTML = `<style> span {color: blue } </style>
     <span>text shadow dom odizolowany stylami</span>`;
-    //dodanie  sklonwanego template
-
+   
+   //dodanie  sklonwanego template
     this.shadow.appendChild(tpl.content.cloneNode(true));
   }
 }
