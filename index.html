@@ -7,7 +7,7 @@
 
   <body>
     <span>text dom</span>
-
+    <!-- definicja template -->
     <template class="tpl-greeting">
       <style>
         p {
@@ -15,9 +15,14 @@
         }
       </style>
       <p>zawartość template</p>
+      <!-- definicja slota  -->
+      <p>slot to miejsce na treść użytkownika <slot name="imie"></slot></p>
     </template>
 
-    <my-greeting></my-greeting>
+    <my-greeting>
+      <!-- ta zawartość zostaniw strzyknięta do slot -->
+      <span slot="imie">Marian</span>
+    </my-greeting>
 
     <script src="script.js"></script>
   </body>

@@ -3,17 +3,19 @@ class Greeting extends HTMLElement {
     super();
     // this.innerText = `Hello, macieju`;
 
-    this.shadow = this.attachShadow({ mode: "open" });
+    this.shadow = this.attachShadow({ mode: "closed" });
     this.text = document.createElement("p");
     this.text.innerHTML = "text shadow dom";
     this.shadow.appendChild(this.text);
   }
+
   connectedCallback() {
     const tpl = document.querySelector(".tpl-greeting");
-
+    console.log(tpl);
     this.text.innerHTML = `<style> span {color: blue } </style>
     <span>text shadow dom odizolowany stylami</span>`;
-    //dodanie template skolonwana
+    //dodanie  sklonwanego template
+
     this.shadow.appendChild(tpl.content.cloneNode(true));
   }
 }
